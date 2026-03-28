@@ -1,0 +1,250 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+  max-width: 1213px;
+  min-height: 100vh;
+  /* background: red; */
+  margin: 0 auto;
+}
+
+.heading {
+     width: 623px; 
+     height: 45px; 
+     margin: 59px auto 0; /* centers horizontally */ 
+     text-align: center; 
+} 
+.title { 
+    font-family: "Fustat", sans-serif; 
+    font-weight: 500; font-size: 32px; 
+    line-height: 1; 
+} 
+.content { 
+    width: 1216px; 
+    margin: 0 auto; 
+    margin-top: 25px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 48px; 
+} 
+.stat-section { 
+    width: 528px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+} 
+.stat-subtitle { 
+    font-family: "Outfit", sans-serif; 
+    font-weight: 400; 
+    font-size: 24px; 
+    line-height: 1; 
+    color: #414141; 
+} 
+.stat-title { 
+    font-family: "Nohemi"; 
+    font-weight: 700; 
+    font-size: 32px; 
+    line-height: 1.2; 
+} 
+.green{ 
+    color: #1DA077; 
+}
+
+/*course card style  */
+.grid {
+  max-width: 1216px;
+  display: flex;
+  gap: 32px;
+}
+
+.main-card-wrapper {
+  width: 592px;
+  height: 461px;
+}
+
+.main-card {
+  width: 592px;
+  height: 461px;
+  border-radius: 32px;
+  background-color: #C33241;
+  padding: 32px;
+  color: #fff;
+  position: relative;
+   cursor: pointer;
+  /* overflow: hidden; */
+}
+
+.all-courses {
+  position: absolute;
+  top: 40px;
+  left: 393px;   
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.view-course {
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
+  color: #F9EBEC;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 42px;
+  margin-top: 80px;  
+}
+
+.course-content {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  /* gap: 16px; */
+  margin-top: 50px;
+}
+
+.course {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 45px;
+}
+.left{
+    max-width: 200px;
+    /* text-align: center; */
+}
+.left .boldtext {
+  font-family: "Nohemi", sans-serif;
+  font-weight: 700;
+  font-size: 140px;
+  line-height: 1;
+  color: #F9EBEC;
+  position: relative;
+  display: inline-block;
+}
+
+.plus {
+  position: absolute;
+  top: -9px;
+  right: -28px;
+  font-size: 70px;
+  line-height: 1;
+}
+
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width:218px ;
+}
+.card-title {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.2;
+  color: #F9EBEC;
+}
+.card-description {
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #F9EBEC;
+}
+/*course card style end */
+
+/* stat card style  start*/
+.stat-card {
+  width: 280px;
+  height: 461px;
+  border-radius: 32px;
+  background: #f8ebec;
+  position: relative;
+   cursor: pointer;
+  /* overflow: hidden; */
+}
+
+/* .rotated-content {
+  width: 218px;
+  height: 138px;
+  position: absolute;
+  top: 250px;
+  left: 10px;
+  display: flex;
+  gap: 12px;
+  transform: rotate(-90deg);
+  transform-origin: top left;
+} */
+
+.rotated-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    transform: rotate(-90deg);
+     /* transform-origin: top left; */
+}
+
+.stat-card-title {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1;
+  color: #c33241;
+  /* max-width: 80px; */
+  /* text-align: center; */
+}
+
+.stat-card-description {
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1;
+  color: #c33241;
+  /* text-align: center; */
+  max-width: 220px;
+}
+
+.bottom-text{
+    display: flex;
+    justify-content: center;
+}
+.stat-card-number {
+  position: absolute;
+  /* left: 28px; */
+  bottom: 34px;
+  font-family: "Nohemi", sans-serif;
+  font-weight: 700;
+  font-size: 150px;
+  line-height: 1;
+  color: #c33241;
+}
+
+.stat-plus {
+  position: absolute;
+  top: -22px;
+  right: -20px;
+  font-size: 70px;
+  line-height: 1;
+}
+
+/* stat card style  end*/
+
+.icons.hide {
+  display: none;
+}
+
+/* transition css start  */

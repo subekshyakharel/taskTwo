@@ -248,3 +248,7 @@
 }
 
 /* transition css start  */
+.main-card-slot,
+.subcard {
+  will-change: transform, opacity;
+}

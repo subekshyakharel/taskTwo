@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import CourseCard from "../components/CourseCard";
 import StatCard from "../components/StatCard";
 
@@ -43,41 +44,50 @@ const Course = () => {
         </div>
 
         <div className="grid">
-          <div className="main-card-slot">
-            {activeId === 1 ? (
-              <CourseCard card={cardsData[0]} onClick={() => setActiveId(1)} />
-            ) : (
-              <StatCard
-                card={cardsData[0]}
-                onClick={() => setActiveId(1)}
-                isActive={false}
-              />
-            )}
-          </div>
+          {cardsData.map((card, index) => {
+            const isActive = activeId === card.id;
 
-          <div className="subcard">
-            {activeId === 2 ? (
-              <CourseCard card={cardsData[1]} onClick={() => setActiveId(2)} />
-            ) : (
-              <StatCard
-                card={cardsData[1]}
-                onClick={() => setActiveId(2)}
-                isActive={false}
-              />
-            )}
-          </div>
-
-          <div className="subcard">
-            {activeId === 3 ? (
-              <CourseCard card={cardsData[2]} onClick={() => setActiveId(3)} />
-            ) : (
-              <StatCard
-                card={cardsData[2]}
-                onClick={() => setActiveId(3)}
-                isActive={false}
-              />
-            )}
-          </div>
+            return (
+              <motion.div
+                key={card.id}
+                layout
+                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                className={index === 0 ? "main-card-slot" : "subcard"}
+              >
+                <AnimatePresence mode="wait">
+                  {isActive ? (
+                    <motion.div
+                      key={`course-${card.id}`}
+                      layout
+                      initial={{ opacity: 0, scale: 0.96 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.96 }}
+                      transition={{ duration: 0.45, ease: "easeInOut" }}
+                    >
+                      <CourseCard
+                        card={card}
+                        onClick={() => setActiveId(card.id)}
+                      />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key={`stat-${card.id}`}
+                      layout
+                      initial={{ opacity: 0, scale: 0.96 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.96 }}
+                      transition={{ duration: 0.45, ease: "easeInOut" }}
+                    >
+                      <StatCard
+                        card={card}
+                        onClick={() => setActiveId(card.id)}
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </div>
